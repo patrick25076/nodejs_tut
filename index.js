@@ -1,12 +1,12 @@
 const express= require('express')
 const cors = require('cors')
 const app =express()
-
+require('dotenv').config()
 app.use(express.json())
 app.use(cors())
 app.use(express.static('dist'))
 
-const Note = require('models/Note')
+const Note = require('./models/Note')
 
 app.get('/' , (req , res) => {
     res.send("<div> <h1> Hello World </h1> </div>")
